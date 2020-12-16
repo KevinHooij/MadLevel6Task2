@@ -32,7 +32,7 @@ class MovieAdapter(private val movies: List<MovieItem>, private val onClick: (Mo
 
         fun bind(movieItem: MovieItem) {
             // Glide.with(context).load(movieItem.getImageUrl()).into(itemView.ivColor)
-
+            Glide.with(context).load(String.format("https://image.tmdb.org/t/p/original/%s", movieItem.poster)).into(itemView.ivPoster)
         }
     }
 }
