@@ -7,22 +7,46 @@
     tools:context=".MoviesFragment">
 
     <TextView
-        android:id="@+id/textview_first"
+        android:id="@+id/tvMostPop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/most_pop_txt"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/year_txt"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvMostPop"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnSubmit"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:text="@string/submit_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etYear" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMovies"
+        android:layout_width="412dp"
+        android:layout_height="617dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSubmit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
