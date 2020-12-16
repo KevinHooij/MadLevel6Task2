@@ -9,6 +9,6 @@ data class MovieItem(
     @SerializedName("poster_path") var poster: String,
     @SerializedName("title") var title: String,
     @SerializedName("release_date") var release: String,
-    @SerializedName("rating") var rating: Double,
+    @SerializedName("vote_average") var rating: Double,
     @SerializedName("overview") var overview: String
 )

@@ -17,6 +17,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
      * get's updated when user clicks FAB. This happens through the getTriviaNumber() in this class :)
      */
     val movies = movieRepository.movies
+    val movie = movieRepository.movie
 
     private val _errorText: MutableLiveData<String> = MutableLiveData()
 

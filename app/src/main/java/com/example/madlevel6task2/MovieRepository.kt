@@ -10,7 +10,7 @@ class MovieRepository{
 
     private val _movies: MutableLiveData<MovieApiService.Response> = MutableLiveData()
     private val _movie: MutableLiveData<MovieItem> = MutableLiveData()
-    private val movie: LiveData<MovieItem>
+    val movie: LiveData<MovieItem>
         get() = _movie
 
     val movies: LiveData<MovieApiService.Response>

@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +18,6 @@ import kotlinx.android.synthetic.main.fragment_movies.*
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 
-const val MOVIE_KEY = "MOVIE_KEY"
 const val MOVIE_BUNDLE_KEY = "MOVIE_BUNDLE_KEY"
 
 class MoviesFragment : Fragment() {
@@ -25,6 +26,8 @@ class MoviesFragment : Fragment() {
 
     private lateinit var movieAdapter: MovieAdapter
     private val movies = arrayListOf<MovieItem>()
+
+    private lateinit var navController: NavController
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -47,9 +50,10 @@ class MoviesFragment : Fragment() {
     }
 
     private fun OnPosterClick(movieItem: MovieItem){
-      //  viewModel.setMovieId(movieItem.id.toInt())
+      val bundle = bundleOf(Pair(MOVIE_BUNDLE_KEY, movieItem.id))
 
-      //  findNavController().navigate(navigation.r.)
+        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+
     }
 
     private fun addMovies(){
